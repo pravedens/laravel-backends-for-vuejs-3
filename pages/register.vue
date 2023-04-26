@@ -17,7 +17,7 @@ const form = ref({
   password_confirmation: "",
 });
 async function register(payload: RegisterPayload) {
-  const res = await axios.post("/api/register", payload);
+  const res = await axios.post("/register", payload);
   console.log(res);
 }
 </script>
