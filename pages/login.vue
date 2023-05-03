@@ -12,14 +12,15 @@ const form = ref({
   email: "",
   password: ""
 })
-async function login(payload: LoginPayload){
-  await axios.post("/login", payload)
+async function login(payload: LoginPayload) {
+  await axios.post("/login", payload);
+  useRouter().push("/me");
 }
 </script>
 <template>
   <div class="login">
     <h1>Login</h1>
-    <form submit.prevent="login(form)">
+    <form @submit.prevent="login(form)">
       <label>
         <div>Email</div>
         <input type="text" v-model="form.email"/>
