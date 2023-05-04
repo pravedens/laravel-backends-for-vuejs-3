@@ -1,30 +1,19 @@
 <script setup lang="ts">
-import axios from "axios";
 
 definePageMeta({
   layout: "centered",
   middleware: ["guest"],
 });
-interface RegisterPayload {
-  name: string;
-  email: string;
-  password: string;
-  password_confirmation: string;
-}
+
 const form = ref({
   name: "",
   email: "",
   password: "",
   password_confirmation: "",
 });
-async function register(payload: RegisterPayload) {
-  await axios.post("/register", payload);
-  await axios.post("/login", {
-    email: payload.email,
-    password: payload.password
-  });
-  useRouter().push("/me");
-}
+
+const { register } = useAuth();
+
 </script>
 <template>
   <div class="register">
