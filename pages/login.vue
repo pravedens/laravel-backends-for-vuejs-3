@@ -22,7 +22,7 @@ const form = ref({
       </label>
 
       <label>
-        <div>Password</div>
+        <div>Пароль</div>
         <input type="password" v-model="form.password"/>
       </label>
       <button class="btn">Login</button>
