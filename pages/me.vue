@@ -4,9 +4,8 @@
 </template>
 
 <script setup>
-import axios from "axios";
 definePageMeta({
   middleware: ["auth"],
 });
-const { data: user } = await axios.get("/user");
+const { user } = useAuth();
 </script>
